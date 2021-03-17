@@ -14,10 +14,13 @@ RUN apt-get update && apt-get install -y php-dom \
      php-mysql \
      composer \
      apache2 \
-     nano
+     nano \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 
 # Deploy Robert2
+
 RUN git clone https://github.com/Robert-2/Robert2.git
 RUN cd Robert2/server \
 && composer install --no-dev 
