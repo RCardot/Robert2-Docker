@@ -22,8 +22,10 @@ RUN apt-get update && apt-get install -y php-dom \
 # Deploy Robert2
 
 RUN git clone https://github.com/Robert-2/Robert2.git
-RUN cd Robert2/server \
-&& composer install --no-dev 
+
+WORKDIR /Robert2/server
+
+RUN composer install --no-dev 
 
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
