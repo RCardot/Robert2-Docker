@@ -7,7 +7,8 @@ EXPOSE 80
 RUN set -eux
 
 # Install needed packages
-RUN apt-get update && apt-get install -y php-dom \
+RUN apt-get update && apt-get install -y \
+     php-dom \
      php-dom \
      php7.3 \
      php-intl \
@@ -35,7 +36,4 @@ RUN a2enmod rewrite
 
 RUN chmod -R 777 /var/www/Robert2
 
-CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
-
-# Mount a shared volume
-VOLUME robert-share /usr/shr
+CMD ["/usr/sbin/apache2", "-DFOREGROUND"]
