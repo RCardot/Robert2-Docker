@@ -7,14 +7,14 @@ EXPOSE 80
 RUN set -eux
 
 # Install needed packages
-RUN apt update \
-&& apt install -y php-dom \
-&& apt install -y php7.3 \
-&& apt install -y php-intl \
-&& apt install -y php-mysql \
-&& apt install -y composer \
-&& apt install -y apache2 \
-&& apt install -y nano
+RUN apt-get update && apt-get install -y php-dom \
+     php-dom \
+     php7.3 \
+     php-intl \
+     php-mysql \
+     composer \
+     apache2 \
+     nano
 
 
 # Deploy Robert2
