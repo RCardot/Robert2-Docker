@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y php-dom \
 
 # Deploy Robert2
 
-RUN git clone https://github.com/Robert-2/Robert2.git
+ADD https://github.com/Robert-2/Robert2.git
 
 WORKDIR /Robert2/server
 
