@@ -1,3 +1,4 @@
 ignored:
   # no care about pin version for now
   - DL3008
+  - DL3015
